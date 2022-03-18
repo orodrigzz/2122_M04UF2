@@ -8,20 +8,22 @@ class App extends React.Component {
 	constructor(props){
 		super(props);
 		this.state ={
-
+			tasks: []
 		};
 	}
 
-	handleSubmit = event => {
-		console.log(event.target.value);
-
+	handleSubmit = task => {
+		this.state.tasks.push(task);
+		this.setState({
+			tasks: this.state.tasks
+			});
 	}
 		render(){
 	  return (
     	<div className="App">
     	<Title />
 		<Form handleSubmit={this.handleSubmit}/>
-		<List />
+		<List tasks={this.state.tasks}/>
 		</div>
  	 );
 	}

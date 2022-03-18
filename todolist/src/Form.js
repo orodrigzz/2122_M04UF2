@@ -15,6 +15,11 @@ class Form extends React.Component{
 	handleSubmit = (event)=>{
 		event.preventDefault();
 		this.props.handleSubmit(this.state.task);
+
+		this.state.task = "";
+		this.setState({
+			task: ""
+			});
 	}
 
 	handleChange = (event) => {
@@ -22,10 +27,11 @@ class Form extends React.Component{
 			task: event.target.value
 		});
 	}
+
 	render(){
 	return (
 		<form onSubmit={this.handleSubmit}>
-		<InputTxt handleChange={this.handleChange} />
+		<InputTxt value={this.state.task} handleChange={this.handleChange} />
 		<SubmitButt />
 		</form>
 	);

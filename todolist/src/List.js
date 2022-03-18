@@ -4,8 +4,8 @@ import TaskItem from './TaskItem';
 class List extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={
-			tasks : []
+		this.state = {
+			tasks : props.tasks
 			};
 	}
 	render(){
@@ -18,7 +18,7 @@ class List extends React.Component{
 
 		return (
 		<ul> 
-		{tasks}
+			{tasks}
 		</ul>
 		);
 	}
