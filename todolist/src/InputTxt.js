@@ -8,14 +8,16 @@ class InputTxt extends React.Component{
 		};
 	}
 
-	handleChange (event){
+	handleChange = (event) => {
 		console.log(event.target.value);
+		this.props.handleChange(event);
 		this.setState({
 			value: event.target.value
 		});
 	}
 
 	render() {
+		let l = this.state.value.length;
 		return (
 		<label htmlFor="task"> Tarea 
 		<input type="text" id="task" onChange={this.handleChange}/>

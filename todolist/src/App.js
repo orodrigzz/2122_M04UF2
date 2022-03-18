@@ -1,16 +1,30 @@
+import React from 'react';
 import './App.css';
 import Title from './Title';
 import Form from './Form';
-import TaskItem from './TaskItem';
+import List from './List';
 
-function App() {
-  return (
-    <div className="App">
-    <Title />
-	<Form />
-	<TaskItem />
-	</div>
-  );
+class App extends React.Component {
+	constructor(props){
+		super(props);
+		this.state ={
+
+		};
+	}
+
+	handleSubmit = event => {
+		console.log(event.target.value);
+
+	}
+		render(){
+	  return (
+    	<div className="App">
+    	<Title />
+		<Form handleSubmit={this.handleSubmit}/>
+		<List />
+		</div>
+ 	 );
+	}
 }
 
 export default App;

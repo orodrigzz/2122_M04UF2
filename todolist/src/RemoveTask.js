@@ -1,8 +1,7 @@
 function RemoveTask (props)
 {
 	return(
-	<button> Borrar </button>
-
+		<button> Borrar </button>
 	);
 
 }

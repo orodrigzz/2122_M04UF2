@@ -7,17 +7,25 @@ import SubmitButt from './SubmitButt';
 class Form extends React.Component{
 	constructor(props){
 		super(props);
+		this.state = {
+			task: ""
+		};
 	}
 
-	handleSubmit(event){
+	handleSubmit = (event)=>{
 		event.preventDefault();
-		console.log("ª");
+		this.props.handleSubmit(this.state.task);
 	}
 
+	handleChange = (event) => {
+		this.setState({
+			task: event.target.value
+		});
+	}
 	render(){
 	return (
 		<form onSubmit={this.handleSubmit}>
-		<InputTxt />
+		<InputTxt handleChange={this.handleChange} />
 		<SubmitButt />
 		</form>
 	);
