@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Title from './Title';
 import Form from './Form';
 import List from './List';
@@ -18,12 +17,20 @@ class App extends React.Component {
 			tasks: this.state.tasks
 			});
 	}
+
+	removeTask = id_task => {
+		this.state.tasks.splice(id_task, 1);
+		this.setState({
+			tasks: this.state.tasks
+		});
+	}
+
 		render(){
 	  return (
     	<div className="App">
     	<Title />
 		<Form handleSubmit={this.handleSubmit}/>
-		<List tasks={this.state.tasks}/>
+		<List tasks={this.state.tasks} removeTask={this.removeTask}/>
 		</div>
  	 );
 	}

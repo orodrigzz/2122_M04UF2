@@ -18,9 +18,8 @@ class InputTxt extends React.Component{
 	render() {
 		let l = this.state.value.length;
 		return (
-		<label htmlFor="task"> Tarea 
-		<input type="text" id="task" onChange={this.handleChange} value={this.state.value}/>
-		</label>
+		<TextField label ="Tarea"  onChange={this.handleChange} value={this.state.value}/>
+		
 		);
 	}
 }
