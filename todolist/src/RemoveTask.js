@@ -1,13 +1,14 @@
 import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/material/Delete';
+
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function RemoveTask (props)
 {
-	return(
-		<Button startIcon={<DeleteIcon />} variant="contained" onClick={function (event) {
-			props.removeTask(props.id_task);
+	return (
+		<Button startIcon={<DeleteIcon />} onClick={function (event){
+				props.removeTask(props.id_task);
 			}
-		}> Borrar </Button>
+		}>BORRAR</Button>
 	);
 
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 
-class InputTxt extends React.Component{
+import TextField from '@mui/material/TextField';
+
+class TaskInput extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -9,19 +11,19 @@ class InputTxt extends React.Component{
 	}
 
 	handleChange = (event) => {
+		//console.log(event.target.value);
 		this.props.handleChange(event);
+		
 		this.setState({
 			value: event.target.value
 		});
 	}
 
 	render() {
-		let l = this.state.value.length;
 		return (
-		<TextField label ="Tarea"  onChange={this.handleChange} value={this.state.value}/>
-		
+		<TextField label="Tarea" onChange={this.handleChange} value={this.props.value}/>
 		);
 	}
 }
 
-export default InputTxt;
+export default TaskInput;

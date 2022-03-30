@@ -1,22 +1,26 @@
 import React from 'react';
+//import './App.css';
 import Title from './Title';
-import Form from './Form';
-import List from './List';
+import TaskForm from './TaskForm';
+import TaskList from './TaskList';
 
-class App extends React.Component {
+class App extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={
+		this.state = {
 			tasks: []
 		};
 	}
 
-	handleSubmit = task => {
+	addTask = task => {
+		console.log(task);
+
 		this.state.tasks.push(task);
 		this.setState({
 			tasks: this.state.tasks
-			});
+		});
 	}
+
 
 	removeTask = id_task => {
 		this.state.tasks.splice(id_task, 1);
@@ -25,15 +29,16 @@ class App extends React.Component {
 		});
 	}
 
-		render(){
-	  return (
-    	<div className="App">
-    	<Title />
-		<Form handleSubmit={this.handleSubmit}/>
-		<List tasks={this.state.tasks} removeTask={this.removeTask}/>
-		</div>
- 	 );
-	}
+
+	render(){
+		return (
+<div className="App">
+<Title />
+<TaskForm addTask={this.addTask} />
+<TaskList tasks={this.state.tasks} removeTask={this.removeTask}/>
+</div>
+		);
+  }
 }
 
 export default App;

@@ -1,21 +1,24 @@
 import React from 'react';
 import TaskItem from './TaskItem';
+
 import List from '@mui/material/List';
 
-class List extends React.Component{
+class TaskList extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
 			tasks : props.tasks
 		};
 	}
-	render(){
-		let t = this.state.tasks;
-		let tasks = [];
 
+	render ()
+	{
+		let t = this.state.tasks;
+
+		let tasks = [];
 		for (let i = 0; i < t.length; i++){
-		tasks.push(<TaskItem task={t[i]} key={i} id_task={i}
-			removeTask={this.props.removeTask} />);
+			tasks.push(<TaskItem task={t[i]} key={i} id_task={i}
+				removeTask={this.props.removeTask} />);
 		}
 
 		return (
@@ -26,4 +29,4 @@ class List extends React.Component{
 	}
 }
 
-export default List;
+export default TaskList;
