@@ -1,7 +1,9 @@
+import Button from '@mui/material/Button';
+
 function TaskSubmit ()
 {
 	return (
-		<button>Añadir</button>
+		<Button variant="outlined">Añadir</Button>
 	);
 
 }
