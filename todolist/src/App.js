@@ -10,7 +10,18 @@ class App extends React.Component{
 		this.state = {
 			tasks: []
 		};
+
+		fetch("http://10.40.1.104:3030/")
+		.then(response => response.json())
+		.then(data => this.setTasks(data));
 	}
+
+	setTasks = data => {
+		this.state.tasks = data;
+		this.setState({
+			tasks:this.state.tasks
+		});
+	};
 
 	addTask = task => {
 		console.log(task);
