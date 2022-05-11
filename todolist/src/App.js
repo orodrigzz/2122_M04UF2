@@ -34,7 +34,7 @@ class App extends React.Component{
 			tasks: this.state.tasks
 		});
 
-		fetch('http://10.40.2.31:3030/', {
+		fetch('http://10.40.1.104:3030/', {
 			method: 'POST',
 			body: '{"task":"'+task+'"}'
 		});

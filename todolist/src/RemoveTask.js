@@ -51,7 +51,7 @@ class RemoveTask extends React.Component
 		<DialogTitle>Borrar tarea</DialogTitle>
 		<DialogContent>
 		<DialogContentText>
-			¿Quieres borrar "NOMBRE TAREA"?
+			¿Quieres borrar la tarea?
 		</DialogContentText>
 		</DialogContent>
 		<DialogActions>
