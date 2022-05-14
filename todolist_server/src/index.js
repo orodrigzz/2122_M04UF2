@@ -43,7 +43,7 @@ http.createServer(function(req, res){
 				db.collection("tasks").insertOne({'task':data.task});
 			}
 			else if (data.delete != undefined){
-
+				db.collection("tasks").deleteOne({"task":data.task});
 			}
 		});
 
